@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="node_modules/art-template/lib/template-web.js"></script>
+<script type="text/template" id="tpl">
+    <!--    {{}} mustache语法-->
+    hello {{name}}
+</script>
+<script>
+    let ret = template('tpl', {
+        name: 'jack'
+    })
+    console.log(ret);
+</script>
+</body>
+</html>
