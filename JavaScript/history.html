@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">回退按钮</button>
+    <h1>history</h1>
+    <a href="bom.html">去bom</a>
+    <script>
+        // history对象可以用来操作对象向前或向后翻页
+        // alert(history.length);
+        var btn=document.getElementById('btn');
+        btn.onclick=function(){
+            // history.back();
+            // go(1)向前跳转一个页面，go(-1)向后跳转一个页面，go(2)向前跳转两个页面，依次类推
+            history.go(-1);
+        }
+    </script>
+</body>
+</html>

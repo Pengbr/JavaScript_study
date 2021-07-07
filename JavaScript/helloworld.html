@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入外部JS文件 -->
+    <!-- 一般link用来引入外部css文件，script标签用来引入外部JS文件 -->
+    <!-- <link rel="stylesheet" href="test.js"> -->
+    <script src="test.js">
+        // 结尾要加分号
+        // alert('这是我的第一行JS代码');
+        // 可以将JS代码写在script标签中
+        // 引入外部JS后再在script中编写的代码无效
+    </script>
+    <script>
+        alert('我是内部JS')
+        document.write('hello world!');
+        console.log('在哪呢？');
+    </script>
+</head>
+<body>
+    <!-- 可以将JS代码编写到标签的onclick属性中 -->
+    <button onclick="alert('讨厌，你点我干嘛~~')">点我一下</button>
+    <!-- 可以将JS代码写在href属性中 -->
+    <a href="javascript:alert('让你点你就点')">你也点我一下</a>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer{
+            width: 800px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #imgList{
+            position: absolute;
+            display: flex;
+            list-style: none;
+            left: -50px;
+            top: -16px;
+        }
+        #imgList li{
+            margin: 0 10px;
+        }
+        #inner{
+            position: absolute;
+            bottom: 15px;
+            left: 350px;
+        }
+        #inner a{
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin: 4px;
+            background-color: red;
+            /* 设置opacity属性使其变成实心小正方形 */
+            opacity: 0.5;
+        }
+        #inner a:hover{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <ul id="imgList">
+            <li><img src="../美女图片/1.jpeg" alt=""></li>
+            <!-- <li><img src="../美女图片/2.jpeg" alt=""></li>
+            <li><img src="../美女图片/3.jpeg" alt=""></li>
+            <li><img src="../美女图片/4.jpeg" alt=""></li>
+            <li><img src="../美女图片/5.jpeg" alt=""></li> -->
+        </ul>
+        <div id="inner">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+
+    <script>
+        imgArr=['../美女图片/1.jpeg','../美女图片/2.jpeg',
+                '../美女图片/3.jpeg','../美女图片/4.jpeg',
+                '../美女图片/5.jpeg']
+        var img=document.getElementsByTagName('img')[0];
+        var inner=document.getElementById('inner');
+        // allA是一个数组对象
+        var allA=document.getElementsByTagName('a');
+
+        function setA(){
+            for (var i=0;i<allA.length;i++){
+                allA[i].style.backgroundColor='red';
+            }
+        }
+
+        // 为a绑定单击响应函数
+        for (let i=0;i<allA.length;i++){
+            allA[i].onclick=function(){
+            // allA[i].num=i;
+            // alert(this.num);
+            // img.src=imgArr[this.num];
+            img.src=imgArr[i];
+            // 现将其它颜色设置为红色，避免出现多个黑色
+            setA();
+            allA[i].style.backgroundColor='black';
+        }
+        }
+        
+    </script>
+</body>
+</html>

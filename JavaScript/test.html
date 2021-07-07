@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function myFunction(){
+        //     document.write(Date());
+        // }
+        // document.write('haha'+'<br>');
+        // document.write('hehe');
+        var num1 =prompt('请输入一个整数');
+        var num2=prompt('请再输入一个整数');
+        var num3=prompt('最后输入一个整数');
+        if (num1>num2){
+            if (num1>num3){
+                if (num2>num3){
+                    alert(num1+num2+num3);
+                }else{
+                    alert(num1+num3+num2);
+                }
+            }else{
+                alert(num3+num1+num2);
+            }
+        }else{
+            if (num1>num3){
+                alert(num2+num1+num3);
+            }else{
+                if (num2>num3){
+                    alert(num2+num3+num1);
+                }else{
+                    alert(num3+num2+num1);
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <!-- <button onclick="myFunction()">点我</button> -->
+</body>
+</html>

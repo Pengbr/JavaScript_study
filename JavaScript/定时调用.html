@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="count"></h1>
+
+    <script>
+        // 回调函数，函数作为参数,回调函数就是一个被作为参数传递的函数。
+        // 作为参数的函数即为回调函数
+        // setInterval()定时调用，每隔一段时间执行一次,需要传入一个回调函数和时间作为参数
+        var count=document.getElementById('count');
+        // for (var i=0;i<10;i++){
+        //     count.innerHTML=i;
+        // }
+        var num=1;
+        // timer作为定时器的唯一标识
+        var timer=setInterval(function(){
+            count.innerHTML=num++;
+            if (num==11){
+                clearInterval(timer);
+            }
+        },1000)
+        console.log(timer);
+        // clearInterval()可以用来关闭一个定时器
+        // clearInterval(timer);
+    </script>
+</body>
+</html>

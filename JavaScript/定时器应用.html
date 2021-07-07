@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 开启绝对定位以移动box1 */
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn01">点我一下</button>
+    <br><br>
+    <div id="box1"></div>
+
+    <script>
+        var btn01=document.getElementById('btn01');
+        var box1=document.getElementById('box1');
+        var timer;
+        btn01.onclick=function(){
+            // 避免同时开启多个定时器
+            clearInterval(timer);
+            // 开启一个定时器,箭头函数
+                timer=setInterval(() => {
+                var oldValue=parseFloat(box1.offsetLeft);
+                var newValue=oldValue+10;
+                if (newValue>800){
+                    newValue=800;
+                }
+                // 加号，级联运算符
+                box1.style.left=newValue+'px';  
+                if (newValue==800){
+                    clearInterval(timer);
+                }
+            }, 30);
+        }
+    </script>
+</body>
+</html>

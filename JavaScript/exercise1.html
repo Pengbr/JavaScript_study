@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #outer{
+            margin: 50px 500px;
+            background-color: #e3e3e3;
+            padding: 18px;
+        }
+        img{
+            width: 500px;
+            height: 300px;
+        }
+        button{
+            margin-left: 130px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner">
+            <img src="./美女图片/1.jpeg" alt="javascript:;">
+        </div>
+        <button id="prev">上一张</button>
+        <button id="next">下一张</button>
+    </div>
+    <script>
+        // 注意要先获取对象才能对对象进行一系列的操作，即用JS操作html、css
+        // 为图片路径创建一个数组
+        var imgArr=['./美女图片/1.jpeg','./美女图片/2.jpeg','./美女图片/3.jpeg','./美女图片/4.jpeg','./美女图片/5.jpeg']
+        // 创建索引,后续主要操作索引来进行图片切换
+        var index=0;
+        // 获取图片对象
+        var img=document.getElementsByTagName('img')[0];
+        // 为按钮绑定单击响应事件
+        var prev=document.getElementById('prev');
+        var next=document.getElementById('next');
+        prev.onclick=function(){
+            index--;
+            if (index<0){
+                index=imgArr.length-1;
+            }
+            img.src=imgArr[index];
+        }
+        next.onclick=function(){
+            index++;
+            if (index>imgArr.length-1){
+                index=0;
+            }
+            img.src=imgArr[index];
+        }
+    </script>
+</body>
+</html>

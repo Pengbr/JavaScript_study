@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <h1>location</h1>
+    <a href="bom.html">去bom</a>
+    <script>
+        // location 对象封装了浏览器地址栏的信息
+        var btn=document.getElementById('btn');
+        btn.onclick=function(){
+            // alert(location);
+            // 可以当超链接使用
+            location='https://www.baidu.com';
+        }
+    </script>
+</body>
+</html>

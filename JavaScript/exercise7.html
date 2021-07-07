@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #outer{
+            width: 820px;
+            height: 500px;
+            margin: 50px auto;
+            background-color: greenyellow;
+            padding: 10px 0;
+            /* 子绝父相 */
+            position: relative;
+            /* 裁剪溢出的内容 */
+            overflow: hidden;
+        }
+        #imgList{
+            list-style: none;
+            display: flex;
+            position: absolute;
+            /* left: -820px; */
+        }
+        #imgList li{
+            margin: 0 10px;
+        }
+        #navDiv{
+            position: absolute;
+            bottom: 15px;
+        }
+        #navDiv a{
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin: 0 4px;
+            background-color: red;
+            opacity: 0.5;
+        }
+        #navDiv a:hover{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <ul id="imgList">
+            <li>
+                <img src="美女图片/1.jpeg" alt="javascript:;">
+            </li>
+            <li>
+                <img src="美女图片/2.jpeg" alt="javascript:;">
+            </li>
+            <li>
+                <img src="美女图片/3.jpeg" alt="javascript:;">
+            </li>
+            <li>
+                <img src="美女图片/4.jpeg" alt="javascript:;">
+            </li>
+            <li>
+                <img src="美女图片/5.jpeg" alt="javascript:;">
+            </li>
+        </ul>
+        <div id="navDiv">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+
+    <script>
+        // 设置导航按钮居中
+        var navDiv=document.getElementById('navDiv');
+        var outer=document.getElementById('outer');
+        navDiv.style.left=(outer.offsetWidth-navDiv.offsetWidth)/2+'px';
+        var imgList=document.getElementById('imgList');
+
+        var index=0;
+        var allA=document.getElementsByTagName('a');
+        allA[index].style.backgroundColor='black';
+
+        function setA(){
+            for (var i=0;i<allA.length;i++){
+                allA[i].style.backgroundColor='red';
+            }
+            allA[index].style.backgroundColor='black';
+        }
+
+        // 为超链接绑定单击响应函数
+        for (var i=0;i<allA.length;i++){
+            // 添加属性
+            allA[i].num=i;
+            allA[i].onclick=function(){
+                index=this.num;
+                imgList.style.left=index*(-820)+'px'; 
+                setA();
+            }
+        }
+    </script>
+</body>
+</html>

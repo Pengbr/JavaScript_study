@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            padding: 10px;
+            border: 10px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn01">点我一下</button>
+    <br><br>
+    <div id="box1"></div>
+    <script>
+        // 用JS来操控HTML、CSS
+        var box1=document.getElementById('box1');
+        var btn01=document.getElementById('btn01');
+        btn01.onclick=function(){
+            // 以下属性不带px，可以直接计算,只读属性
+            // clientWidth可见宽度
+            // alert(box1.clientWidth);
+            // alert(box1.offsetWidth);
+            alert(box1.offsetLeft);
+        }
+    </script>
+</body>
+</html>

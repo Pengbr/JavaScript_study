@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var n=0;
+        // while (true){
+        //     alert(n++);
+        // }
+        // while (n<10){
+        //     document.write(n++ +'<br>');
+        // }
+        //    do ... while循环
+        // do{循环体}while(条件表达式),与while语句刚好相反
+        // do{
+        //     document.write(n++ +'<br>');
+        // }while(n<=10);
+        // 在JS中大括号没有作用域的意思
+        // const profit = 1.05;
+        // var money=1000;
+        // var count=0;
+        // while (money<5000){
+        //     money=money*profit;
+        //     count++;
+        // }
+        // document.write(count);
+
+        // for (var i=0;i<10;i++){
+        //     alert(i);
+        // }
+        // 1、初始化变量，只会执行一次；2、条件表达式；3、更新表达式
+        // for (var i=1,sum=0;i<100;i++){
+        //     sum+=i++;
+        // }
+        // document.write(sum);
+
+        // var sum=0;
+        // var count=0;
+        // for (i=0;i<=100;i++){
+        //     if (i%7 == 0){
+        //         count+=1;
+        //         sum+=i;
+        //     }
+        // }
+        // document.write("sum=",sum,"count"=count);
+        // document.write('hello');
+
+        var num=prompt('请输入一个大于1的整数');
+        if (num<1){
+            alert('该值不合法');
+        }else{
+            // 默认当前num是质数,使用标识变量来标识不同的状态
+            var flag=true;
+            for (i=2;i<num;i++){
+                if (num%i == 0){
+                    flag=false;
+                    break;
+                }
+            }
+            if (flag){
+                alert('是质数');
+            }else{
+                alert('不是质数');
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

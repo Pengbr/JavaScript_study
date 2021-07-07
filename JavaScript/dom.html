@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button id="btn" onclick="alert('你点我干嘛')">我是一个按钮</button> -->
+    <button id="btn">我是一个按钮</button>
+    <script>
+        // 获取dom对象
+        // 浏览器已经为我们提供了文档节点，这个对象是window属性，可以在页面中直接使用
+        var btn=document.getElementById("btn");
+        // innerHTML内部的HTML代码
+        btn.innerHTML="i am a button";
+        // 事件，就是用户和浏览器的交互行为
+        // 可以为按钮的对应事件绑定处理函数的形式来响应事件
+        btn.onclick=function(){
+            alert('你点我干嘛~');
+        }
+    </script>
+</body>
+</html>
